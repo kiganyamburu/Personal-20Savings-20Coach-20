@@ -18,13 +18,13 @@ export function ChatMessage({ message }: ChatMessageProps) {
     <div
       className={cn(
         "flex gap-3 animate-slide-up",
-        isUser && "flex-row-reverse"
+        isUser && "flex-row-reverse",
       )}
     >
       <div
         className={cn(
           "flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold text-white",
-          isUser ? "bg-primary" : "bg-secondary"
+          isUser ? "bg-primary" : "bg-secondary",
         )}
       >
         {isUser ? "U" : "A"}
@@ -35,7 +35,7 @@ export function ChatMessage({ message }: ChatMessageProps) {
             "rounded-lg px-4 py-3 break-words",
             isUser
               ? "bg-primary text-primary-foreground rounded-br-none"
-              : "bg-muted text-foreground rounded-bl-none"
+              : "bg-muted text-foreground rounded-bl-none",
           )}
         >
           <p className="text-sm leading-relaxed">{message.content}</p>
@@ -43,7 +43,7 @@ export function ChatMessage({ message }: ChatMessageProps) {
         <p
           className={cn(
             "text-xs text-muted-foreground mt-1",
-            isUser && "text-right"
+            isUser && "text-right",
           )}
         >
           {message.timestamp.toLocaleTimeString([], {

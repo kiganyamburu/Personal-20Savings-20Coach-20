@@ -9,7 +9,11 @@ interface ChatInputProps {
   disabled?: boolean;
 }
 
-export function ChatInput({ onSubmit, isLoading = false, disabled = false }: ChatInputProps) {
+export function ChatInput({
+  onSubmit,
+  isLoading = false,
+  disabled = false,
+}: ChatInputProps) {
   const [input, setInput] = useState("");
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
@@ -19,7 +23,7 @@ export function ChatInput({ onSubmit, isLoading = false, disabled = false }: Cha
 
     const message = input.trim();
     setInput("");
-    
+
     // Reset textarea height
     if (textareaRef.current) {
       textareaRef.current.style.height = "auto";
@@ -38,7 +42,7 @@ export function ChatInput({ onSubmit, isLoading = false, disabled = false }: Cha
   const handleInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const textarea = e.target;
     setInput(textarea.value);
-    
+
     // Auto-resize textarea
     textarea.style.height = "auto";
     textarea.style.height = Math.min(textarea.scrollHeight, 120) + "px";
@@ -58,7 +62,7 @@ export function ChatInput({ onSubmit, isLoading = false, disabled = false }: Cha
             "w-full resize-none rounded-lg border border-border bg-input px-4 py-3 text-sm",
             "placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50",
             "focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-0",
-            "max-h-[120px] min-h-[48px]"
+            "max-h-[120px] min-h-[48px]",
           )}
           rows={1}
         />

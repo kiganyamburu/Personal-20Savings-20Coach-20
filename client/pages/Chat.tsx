@@ -19,7 +19,8 @@ export default function Chat() {
       setMessages([
         {
           id: "1",
-          content: "Hi! I'm your Personal Savings Coach. Tell me about your spending habits, and I'll help you manage your budget better. You can say things like 'spent $45 on groceries' or 'my rent is $1200'.",
+          content:
+            "Hi! I'm your Personal Savings Coach. Tell me about your spending habits, and I'll help you manage your budget better. You can say things like 'spent $45 on groceries' or 'my rent is $1200'.",
           sender: "assistant",
           timestamp: new Date(),
         },
@@ -59,7 +60,9 @@ export default function Chat() {
       const assistantMessage: Message = {
         id: (Date.now() + 1).toString(),
         content:
-          assistantResponses[Math.floor(Math.random() * assistantResponses.length)],
+          assistantResponses[
+            Math.floor(Math.random() * assistantResponses.length)
+          ],
         sender: "assistant",
         timestamp: new Date(),
       };
@@ -74,7 +77,11 @@ export default function Chat() {
       <Header />
 
       <main className="flex-1 container max-w-screen-2xl py-6">
-        <Tabs value={activeTab} onValueChange={setActiveTab} className="h-full flex flex-col">
+        <Tabs
+          value={activeTab}
+          onValueChange={setActiveTab}
+          className="h-full flex flex-col"
+        >
           <TabsList className="grid w-full max-w-xs grid-cols-3">
             <TabsTrigger value="chat" className="gap-2">
               <MessageCircle className="h-4 w-4" />
@@ -124,27 +131,41 @@ export default function Chat() {
           <TabsContent value="insights" className="flex-1 overflow-y-auto py-4">
             <div className="grid grid-cols-1 gap-4">
               <div className="rounded-lg border border-border p-6 bg-gradient-to-br from-blue-50 to-blue-50/50 dark:from-blue-950/20 dark:to-blue-900/10">
-                <h3 className="font-semibold text-lg mb-2">Spending Insights</h3>
+                <h3 className="font-semibold text-lg mb-2">
+                  Spending Insights
+                </h3>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Based on your recent conversations, here are personalized recommendations to improve your financial health.
+                  Based on your recent conversations, here are personalized
+                  recommendations to improve your financial health.
                 </p>
                 <ul className="space-y-3">
                   <li className="flex gap-3">
-                    <span className="text-primary font-bold flex-shrink-0">1.</span>
+                    <span className="text-primary font-bold flex-shrink-0">
+                      1.
+                    </span>
                     <span className="text-sm">
-                      <strong>Reduce discretionary spending:</strong> You're spending 40% above the recommended budget for entertainment.
+                      <strong>Reduce discretionary spending:</strong> You're
+                      spending 40% above the recommended budget for
+                      entertainment.
                     </span>
                   </li>
                   <li className="flex gap-3">
-                    <span className="text-primary font-bold flex-shrink-0">2.</span>
+                    <span className="text-primary font-bold flex-shrink-0">
+                      2.
+                    </span>
                     <span className="text-sm">
-                      <strong>Automate savings:</strong> Set up automatic transfers of $100/week to build your emergency fund.
+                      <strong>Automate savings:</strong> Set up automatic
+                      transfers of $100/week to build your emergency fund.
                     </span>
                   </li>
                   <li className="flex gap-3">
-                    <span className="text-primary font-bold flex-shrink-0">3.</span>
+                    <span className="text-primary font-bold flex-shrink-0">
+                      3.
+                    </span>
                     <span className="text-sm">
-                      <strong>Track subscriptions:</strong> You have 5 monthly subscriptions totaling $89. Consider canceling unused ones.
+                      <strong>Track subscriptions:</strong> You have 5 monthly
+                      subscriptions totaling $89. Consider canceling unused
+                      ones.
                     </span>
                   </li>
                 </ul>

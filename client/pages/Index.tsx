@@ -37,7 +37,9 @@ export default function Index() {
                 </span>
               </h1>
               <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-xl">
-                Chat naturally about your spending, and let our AI help you build better financial habits, save more money, and achieve your goals.
+                Chat naturally about your spending, and let our AI help you
+                build better financial habits, save more money, and achieve your
+                goals.
               </p>
             </div>
 
@@ -47,7 +49,7 @@ export default function Index() {
                 className={cn(
                   "inline-flex items-center justify-center gap-2 px-8 py-3 rounded-lg",
                   "bg-primary text-primary-foreground hover:bg-primary/90",
-                  "text-base font-medium transition-colors"
+                  "text-base font-medium transition-colors",
                 )}
               >
                 Start Chatting
@@ -114,7 +116,8 @@ export default function Index() {
               Everything you need to manage your money
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Powerful features designed to help you take control of your finances
+              Powerful features designed to help you take control of your
+              finances
             </p>
           </div>
 
@@ -169,9 +172,7 @@ export default function Index() {
                   <h3 className="text-lg font-semibold text-foreground mb-2">
                     {feature.title}
                   </h3>
-                  <p className="text-muted-foreground">
-                    {feature.description}
-                  </p>
+                  <p className="text-muted-foreground">{feature.description}</p>
                 </div>
               );
             })}
@@ -243,14 +244,15 @@ export default function Index() {
                 Ready to take control of your finances?
               </h2>
               <p className="text-lg text-muted-foreground">
-                Start chatting with your Personal Savings Coach today and begin your journey to better financial health.
+                Start chatting with your Personal Savings Coach today and begin
+                your journey to better financial health.
               </p>
               <Link
                 to="/chat"
                 className={cn(
                   "inline-flex items-center justify-center gap-2 px-8 py-3 rounded-lg",
                   "bg-primary text-primary-foreground hover:bg-primary/90",
-                  "text-base font-medium transition-colors"
+                  "text-base font-medium transition-colors",
                 )}
               >
                 Start Now
@@ -266,7 +268,8 @@ export default function Index() {
         <div className="container max-w-screen-2xl">
           <div className="text-center text-sm text-muted-foreground">
             <p>
-              © 2024 Personal Savings Coach. All rights reserved. Built with care to help you achieve your financial goals.
+              © 2024 Personal Savings Coach. All rights reserved. Built with
+              care to help you achieve your financial goals.
             </p>
           </div>
         </div>

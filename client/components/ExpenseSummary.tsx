@@ -50,23 +50,31 @@ export function ExpenseSummary({ metrics }: ExpenseSummaryProps) {
           key={index}
           className={cn(
             "rounded-lg border border-border p-6 backdrop-blur supports-[backdrop-filter]:bg-background/60",
-            `bg-gradient-to-br ${metric.color}`
+            `bg-gradient-to-br ${metric.color}`,
           )}
         >
           <div className="flex items-start justify-between">
             <div className="flex-1">
-              <p className="text-sm text-muted-foreground font-medium">{metric.label}</p>
-              <p className="text-2xl font-bold text-foreground mt-2">{metric.value}</p>
+              <p className="text-sm text-muted-foreground font-medium">
+                {metric.label}
+              </p>
+              <p className="text-2xl font-bold text-foreground mt-2">
+                {metric.value}
+              </p>
               {metric.change && (
-                <p className="text-xs text-muted-foreground mt-2">{metric.change}</p>
+                <p className="text-xs text-muted-foreground mt-2">
+                  {metric.change}
+                </p>
               )}
             </div>
-            <div className={cn(
-              "p-2 rounded-lg",
-              metric.trend === "up" && "text-orange-600 bg-orange-100/20",
-              metric.trend === "down" && "text-green-600 bg-green-100/20",
-              !metric.trend && "text-primary bg-primary/10"
-            )}>
+            <div
+              className={cn(
+                "p-2 rounded-lg",
+                metric.trend === "up" && "text-orange-600 bg-orange-100/20",
+                metric.trend === "down" && "text-green-600 bg-green-100/20",
+                !metric.trend && "text-primary bg-primary/10",
+              )}
+            >
               {metric.trend === "up" && <TrendingUp className="h-5 w-5" />}
               {metric.trend === "down" && <TrendingDown className="h-5 w-5" />}
               {!metric.trend && metric.icon}
