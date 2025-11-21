@@ -11,6 +11,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 export default function Index() {
   return (
@@ -41,11 +42,16 @@ export default function Index() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Link to="/chat" asChild>
-                <Button size="lg" className="gap-2 text-base">
-                  Start Chatting
-                  <ArrowRight className="h-5 w-5" />
-                </Button>
+              <Link
+                to="/chat"
+                className={cn(
+                  "inline-flex items-center justify-center gap-2 px-8 py-3 rounded-lg",
+                  "bg-primary text-primary-foreground hover:bg-primary/90",
+                  "text-base font-medium transition-colors"
+                )}
+              >
+                Start Chatting
+                <ArrowRight className="h-5 w-5" />
               </Link>
               <Button size="lg" variant="outline" className="text-base">
                 Learn More
@@ -239,11 +245,16 @@ export default function Index() {
               <p className="text-lg text-muted-foreground">
                 Start chatting with your Personal Savings Coach today and begin your journey to better financial health.
               </p>
-              <Link to="/chat" asChild>
-                <Button size="lg" className="gap-2 text-base">
-                  Start Now
-                  <ArrowRight className="h-5 w-5" />
-                </Button>
+              <Link
+                to="/chat"
+                className={cn(
+                  "inline-flex items-center justify-center gap-2 px-8 py-3 rounded-lg",
+                  "bg-primary text-primary-foreground hover:bg-primary/90",
+                  "text-base font-medium transition-colors"
+                )}
+              >
+                Start Now
+                <ArrowRight className="h-5 w-5" />
               </Link>
             </div>
           </div>
