@@ -23,18 +23,18 @@ export function Header() {
           >
             Chat
           </Link>
-          <a
-            href="#"
+          <Link
+            to="/dashboard"
             className="text-sm font-medium hover:text-primary transition-colors"
           >
             Dashboard
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            to="/about"
             className="text-sm font-medium hover:text-primary transition-colors"
           >
             About
-          </a>
+          </Link>
         </nav>
       </div>
     </header>
