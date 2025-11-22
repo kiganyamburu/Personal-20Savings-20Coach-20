@@ -203,12 +203,12 @@ export default function About() {
               ].map((tech, index) => (
                 <div
                   key={index}
-                  className="rounded-lg border border-border/50 bg-card/50 backdrop-blur p-4 text-center space-y-1 hover:border-primary/30 transition-colors"
+                  className="rounded-lg border border-border/50 bg-card/50 backdrop-blur p-4 text-center space-y-1 hover:border-primary/40 hover:shadow-md hover:shadow-primary/10 transition-all duration-300 cursor-pointer hover:-translate-y-1 group active:scale-95"
                 >
-                  <p className="font-semibold text-foreground text-sm">
+                  <p className="font-semibold text-foreground text-sm group-hover:text-primary transition-colors duration-300">
                     {tech.name}
                   </p>
-                  <p className="text-xs text-muted-foreground">{tech.desc}</p>
+                  <p className="text-xs text-muted-foreground group-hover:text-foreground transition-colors duration-300">{tech.desc}</p>
                 </div>
               ))}
             </div>
