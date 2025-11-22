@@ -251,12 +251,14 @@ export default function Index() {
                 to="/chat"
                 className={cn(
                   "inline-flex items-center justify-center gap-2 px-8 py-3 rounded-lg",
-                  "bg-primary text-primary-foreground hover:bg-primary/90",
-                  "text-base font-medium transition-colors",
+                  "bg-primary text-primary-foreground hover:bg-primary/90 active:scale-95",
+                  "text-base font-medium transition-all duration-200",
+                  "hover:shadow-lg hover:shadow-primary/30 hover:-translate-y-0.5",
+                  "cursor-pointer"
                 )}
               >
-                Start Now
-                <ArrowRight className="h-5 w-5" />
+                <span className="transition-all duration-300 group-hover:translate-x-0">Start Now</span>
+                <ArrowRight className="h-5 w-5 transition-transform duration-300 hover:translate-x-1" />
               </Link>
             </div>
           </div>
