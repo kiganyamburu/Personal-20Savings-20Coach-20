@@ -91,12 +91,51 @@ export default {
             opacity: "1",
           },
         },
+        "card-hover": {
+          "0%": {
+            transform: "translateY(0px)",
+          },
+          "100%": {
+            transform: "translateY(-6px)",
+          },
+        },
+        "icon-bounce": {
+          "0%, 100%": {
+            transform: "scale(1)",
+          },
+          "50%": {
+            transform: "scale(1.1)",
+          },
+        },
+        "pulse-glow": {
+          "0%, 100%": {
+            boxShadow: "0 0 0 0 rgba(38, 208, 172, 0.4)",
+          },
+          "50%": {
+            boxShadow: "0 0 0 8px rgba(38, 208, 172, 0)",
+          },
+        },
+        "button-click": {
+          "0%": {
+            transform: "scale(1)",
+          },
+          "50%": {
+            transform: "scale(0.98)",
+          },
+          "100%": {
+            transform: "scale(1)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "fade-in": "fade-in 0.3s ease-in-out",
         "slide-up": "slide-up 0.3s ease-out",
+        "card-hover": "card-hover 0.3s ease-out forwards",
+        "icon-bounce": "icon-bounce 0.5s ease-in-out",
+        "pulse-glow": "pulse-glow 2s ease-in-out infinite",
+        "button-click": "button-click 0.2s ease-out",
       },
     },
   },
