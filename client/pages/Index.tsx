@@ -10,7 +10,6 @@ import {
   ArrowRight,
   Sparkles,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 export default function Index() {
@@ -56,13 +55,17 @@ export default function Index() {
                 Start Chatting
                 <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
-              <Button
-                size="lg"
-                variant="outline"
-                className="text-base transition-all duration-200 hover:shadow-md hover:-translate-y-0.5 active:scale-95"
+              <Link
+                to="/about"
+                className={cn(
+                  "inline-flex items-center justify-center gap-2 px-8 py-3 rounded-lg",
+                  "border border-primary text-primary hover:bg-primary/10",
+                  "text-base font-medium transition-all duration-200",
+                  "hover:shadow-md hover:-translate-y-0.5 active:scale-95",
+                )}
               >
                 Learn More
-              </Button>
+              </Link>
             </div>
 
             <div className="pt-4 space-y-3">
@@ -88,24 +91,73 @@ export default function Index() {
           {/* Hero Image / Dashboard Preview */}
           <div className="relative hidden lg:block">
             <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl blur-3xl" />
-            <div className="relative bg-gradient-to-br from-card to-muted rounded-2xl border border-border/50 p-8 shadow-xl">
-              <div className="space-y-4">
-                <div className="h-12 bg-gradient-to-r from-primary to-secondary rounded-lg opacity-20" />
-                <div className="space-y-2">
-                  <div className="h-3 bg-muted rounded w-3/4" />
-                  <div className="h-3 bg-muted rounded w-4/5" />
-                  <div className="h-3 bg-muted rounded w-2/3" />
+            <div className="relative bg-gradient-to-br from-card to-muted rounded-2xl border border-border/50 p-8 shadow-xl space-y-6">
+              {/* Dashboard Header */}
+              <div>
+                <h3 className="text-sm font-semibold text-foreground mb-1">
+                  Dashboard
+                </h3>
+                <p className="text-xs text-muted-foreground">
+                  Your spending overview
+                </p>
+              </div>
+
+              {/* Expense Summary Cards */}
+              <div className="grid grid-cols-1 gap-3">
+                <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-lg p-4 border border-primary/20">
+                  <div className="flex items-center justify-between mb-2">
+                    <p className="text-xs text-muted-foreground font-medium">
+                      This Month
+                    </p>
+                    <span className="text-xs font-semibold text-orange-600 bg-orange-100/50 px-2 py-1 rounded">
+                      +12%
+                    </span>
+                  </div>
+                  <p className="text-xl font-bold text-foreground">$2,450</p>
                 </div>
-                <div className="grid grid-cols-3 gap-4 pt-6">
-                  {[...Array(3)].map((_, i) => (
+
+                <div className="bg-gradient-to-br from-secondary/10 to-secondary/5 rounded-lg p-4 border border-secondary/20">
+                  <div className="flex items-center justify-between mb-2">
+                    <p className="text-xs text-muted-foreground font-medium">
+                      Budget Used
+                    </p>
+                    <span className="text-xs font-semibold text-secondary">
+                      73%
+                    </span>
+                  </div>
+                  <div className="w-full h-2 bg-muted rounded-full overflow-hidden">
+                    <div className="w-3/4 h-full bg-gradient-to-r from-primary to-secondary rounded-full" />
+                  </div>
+                </div>
+
+                <div className="bg-gradient-to-br from-green-100/20 to-green-50/10 rounded-lg p-4 border border-green-200/50">
+                  <p className="text-xs text-muted-foreground font-medium mb-2">
+                    Savings Potential
+                  </p>
+                  <p className="text-xl font-bold text-green-700">$890</p>
+                </div>
+              </div>
+
+              {/* Mini Chart Visualization */}
+              <div className="pt-2 border-t border-border/30">
+                <p className="text-xs text-muted-foreground font-medium mb-3">
+                  Spending Trend
+                </p>
+                <div className="flex items-end gap-1 h-12">
+                  {[60, 70, 55, 80, 65, 75].map((height, i) => (
                     <div
                       key={i}
-                      className="p-4 rounded-lg bg-muted/50 space-y-2"
-                    >
-                      <div className="h-2 bg-primary rounded" />
-                      <div className="h-4 bg-muted rounded w-full" />
-                    </div>
+                      className="flex-1 bg-gradient-to-t from-primary to-secondary rounded-sm opacity-70 hover:opacity-100 transition-opacity"
+                      style={{
+                        height: `${(height / 100) * 100}%`,
+                        minHeight: "4px",
+                      }}
+                    />
                   ))}
+                </div>
+                <div className="flex justify-between text-xs text-muted-foreground mt-2">
+                  <span>Jan</span>
+                  <span>Jun</span>
                 </div>
               </div>
             </div>
