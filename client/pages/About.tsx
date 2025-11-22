@@ -26,7 +26,9 @@ export default function About() {
                 About Personal Savings Coach
               </h1>
               <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
-                We believe financial wellness shouldn't be complicated. Our mission is to empower everyone to take control of their finances through intelligent, conversational AI guidance.
+                We believe financial wellness shouldn't be complicated. Our
+                mission is to empower everyone to take control of their finances
+                through intelligent, conversational AI guidance.
               </p>
             </div>
           </section>
@@ -37,9 +39,13 @@ export default function About() {
               <div className="inline-flex p-3 rounded-lg bg-primary/20">
                 <Target className="h-6 w-6 text-primary" />
               </div>
-              <h2 className="text-2xl font-bold text-foreground">Our Mission</h2>
+              <h2 className="text-2xl font-bold text-foreground">
+                Our Mission
+              </h2>
               <p className="text-muted-foreground leading-relaxed">
-                To democratize financial guidance by making it accessible, personalized, and conversational. We help you understand your spending, make smarter decisions, and build lasting wealth.
+                To democratize financial guidance by making it accessible,
+                personalized, and conversational. We help you understand your
+                spending, make smarter decisions, and build lasting wealth.
               </p>
             </div>
 
@@ -49,7 +55,9 @@ export default function About() {
               </div>
               <h2 className="text-2xl font-bold text-foreground">Our Values</h2>
               <p className="text-muted-foreground leading-relaxed">
-                We're committed to transparency, privacy, and empowerment. Your financial data is treated with the utmost care, and our guidance is always unbiased and truly personalized to your situation.
+                We're committed to transparency, privacy, and empowerment. Your
+                financial data is treated with the utmost care, and our guidance
+                is always unbiased and truly personalized to your situation.
               </p>
             </div>
           </section>
@@ -186,7 +194,8 @@ export default function About() {
                 Built with Modern Technology
               </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                We use cutting-edge tools to ensure reliability, security, and performance
+                We use cutting-edge tools to ensure reliability, security, and
+                performance
               </p>
             </div>
 
@@ -208,7 +217,9 @@ export default function About() {
                   <p className="font-semibold text-foreground text-sm group-hover:text-primary transition-colors duration-300">
                     {tech.name}
                   </p>
-                  <p className="text-xs text-muted-foreground group-hover:text-foreground transition-colors duration-300">{tech.desc}</p>
+                  <p className="text-xs text-muted-foreground group-hover:text-foreground transition-colors duration-300">
+                    {tech.desc}
+                  </p>
                 </div>
               ))}
             </div>
@@ -249,7 +260,9 @@ export default function About() {
                   key={index}
                   className="rounded-lg border border-border/50 bg-card/50 backdrop-blur p-6 space-y-3 transition-all duration-300 hover:border-primary/40 hover:shadow-md hover:shadow-primary/10 cursor-pointer group hover:-translate-y-1"
                 >
-                  <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors duration-300">{faq.q}</h3>
+                  <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors duration-300">
+                    {faq.q}
+                  </h3>
                   <p className="text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors duration-300">
                     {faq.a}
                   </p>
@@ -264,14 +277,15 @@ export default function About() {
               Ready to take control of your finances?
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Start chatting with your Personal Savings Coach today and begin your journey to better financial health.
+              Start chatting with your Personal Savings Coach today and begin
+              your journey to better financial health.
             </p>
             <Link
               to="/chat"
               className={cn(
                 "inline-flex items-center justify-center gap-2 px-8 py-3 rounded-lg",
                 "bg-primary text-primary-foreground hover:bg-primary/90",
-                "text-base font-medium transition-colors"
+                "text-base font-medium transition-colors",
               )}
             >
               Start Chatting

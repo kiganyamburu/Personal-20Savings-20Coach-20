@@ -88,7 +88,7 @@ const recentTransactions = [
     id: "2",
     description: "Uber",
     category: "Transportation",
-    amount: 28.50,
+    amount: 28.5,
     date: "Yesterday",
     type: "expense",
   },
@@ -152,9 +152,7 @@ export default function Dashboard() {
                     cx="50%"
                     cy="50%"
                     labelLine={false}
-                    label={({ name, value }) =>
-                      `${name} $${value}`
-                    }
+                    label={({ name, value }) => `${name} $${value}`}
                     outerRadius={80}
                     fill="#8884d8"
                     dataKey="value"
@@ -175,8 +173,14 @@ export default function Dashboard() {
               </h2>
               <ResponsiveContainer width="100%" height={300}>
                 <LineChart data={monthlyTrend}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
-                  <XAxis dataKey="month" stroke="hsl(var(--muted-foreground))" />
+                  <CartesianGrid
+                    strokeDasharray="3 3"
+                    stroke="hsl(var(--border))"
+                  />
+                  <XAxis
+                    dataKey="month"
+                    stroke="hsl(var(--muted-foreground))"
+                  />
                   <YAxis stroke="hsl(var(--muted-foreground))" />
                   <Tooltip
                     contentStyle={{
@@ -235,7 +239,10 @@ export default function Dashboard() {
                     </thead>
                     <tbody className="divide-y divide-border">
                       {categoryBreakdown.map((item) => (
-                        <tr key={item.category} className="hover:bg-muted/20 transition-colors">
+                        <tr
+                          key={item.category}
+                          className="hover:bg-muted/20 transition-colors"
+                        >
                           <td className="px-6 py-4 text-foreground font-medium">
                             {item.category}
                           </td>
@@ -253,8 +260,8 @@ export default function Dashboard() {
                                     item.percentage > 90
                                       ? "bg-orange-500"
                                       : item.percentage > 75
-                                      ? "bg-yellow-500"
-                                      : "bg-primary"
+                                        ? "bg-yellow-500"
+                                        : "bg-primary"
                                   }`}
                                   style={{ width: `${item.percentage}%` }}
                                 />
@@ -310,9 +317,8 @@ export default function Dashboard() {
                             : "text-foreground"
                         }`}
                       >
-                        {transaction.type === "income" ? "+" : "-"}${
-                          transaction.amount.toFixed(2)
-                        }
+                        {transaction.type === "income" ? "+" : "-"}$
+                        {transaction.amount.toFixed(2)}
                       </p>
                       <p className="text-xs text-muted-foreground">
                         {transaction.date}

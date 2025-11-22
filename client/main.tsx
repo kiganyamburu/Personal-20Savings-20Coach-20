@@ -31,5 +31,5 @@ root.render(
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
-  </QueryClientProvider>
+  </QueryClientProvider>,
 );

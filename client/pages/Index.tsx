@@ -50,13 +50,17 @@ export default function Index() {
                   "inline-flex items-center justify-center gap-2 px-8 py-3 rounded-lg",
                   "bg-primary text-primary-foreground hover:bg-primary/90 active:scale-95",
                   "text-base font-medium transition-all duration-200",
-                  "hover:shadow-lg hover:shadow-primary/30 hover:-translate-y-0.5"
+                  "hover:shadow-lg hover:shadow-primary/30 hover:-translate-y-0.5",
                 )}
               >
                 Start Chatting
                 <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
-              <Button size="lg" variant="outline" className="text-base transition-all duration-200 hover:shadow-md hover:-translate-y-0.5 active:scale-95">
+              <Button
+                size="lg"
+                variant="outline"
+                className="text-base transition-all duration-200 hover:shadow-md hover:-translate-y-0.5 active:scale-95"
+              >
                 Learn More
               </Button>
             </div>
@@ -173,7 +177,9 @@ export default function Index() {
                   <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
                     {feature.title}
                   </h3>
-                  <p className="text-muted-foreground group-hover:text-foreground transition-colors duration-300">{feature.description}</p>
+                  <p className="text-muted-foreground group-hover:text-foreground transition-colors duration-300">
+                    {feature.description}
+                  </p>
                 </div>
               );
             })}
@@ -255,10 +261,12 @@ export default function Index() {
                   "bg-primary text-primary-foreground hover:bg-primary/90 active:scale-95",
                   "text-base font-medium transition-all duration-200",
                   "hover:shadow-lg hover:shadow-primary/30 hover:-translate-y-0.5",
-                  "cursor-pointer"
+                  "cursor-pointer",
                 )}
               >
-                <span className="transition-all duration-300 group-hover:translate-x-0">Start Now</span>
+                <span className="transition-all duration-300 group-hover:translate-x-0">
+                  Start Now
+                </span>
                 <ArrowRight className="h-5 w-5 transition-transform duration-300 hover:translate-x-1" />
               </Link>
             </div>
