@@ -212,21 +212,21 @@ export default function Index() {
                 "Follow personalized recommendations and watch your savings grow with confidence.",
             },
           ].map((item, index) => (
-            <div key={index} className="relative">
-              <div className="absolute -top-8 -left-2 w-16 h-16 bg-primary/10 rounded-full blur-xl" />
-              <div className="relative text-center space-y-4">
-                <div className="inline-flex items-center justify-center h-12 w-12 rounded-full bg-gradient-to-br from-primary to-secondary text-white font-bold text-lg">
+            <div key={index} className="relative group cursor-pointer">
+              <div className="absolute -top-8 -left-2 w-16 h-16 bg-primary/10 rounded-full blur-xl group-hover:bg-primary/20 transition-colors duration-300" />
+              <div className="relative text-center space-y-4 transition-transform duration-300 group-hover:-translate-y-1">
+                <div className="inline-flex items-center justify-center h-12 w-12 rounded-full bg-gradient-to-br from-primary to-secondary text-white font-bold text-lg transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-primary/30 active:scale-95">
                   {item.step}
                 </div>
-                <h3 className="text-xl font-semibold text-foreground">
+                <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors duration-300">
                   {item.title}
                 </h3>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors duration-300">
                   {item.description}
                 </p>
               </div>
               {index < 2 && (
-                <div className="hidden md:block absolute top-6 -right-4 text-primary/30">
+                <div className="hidden md:block absolute top-6 -right-4 text-primary/30 transition-all duration-300 group-hover:text-primary/60 group-hover:translate-x-1">
                   <ArrowRight className="h-6 w-6" />
                 </div>
               )}
