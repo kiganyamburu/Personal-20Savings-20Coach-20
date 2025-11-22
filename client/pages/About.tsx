@@ -108,15 +108,15 @@ export default function About() {
                 return (
                   <div
                     key={index}
-                    className="rounded-lg border border-border/50 bg-card/50 backdrop-blur p-6 space-y-3 hover:border-primary/30 transition-colors"
+                    className="rounded-lg border border-border/50 bg-card/50 backdrop-blur p-6 space-y-3 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 cursor-pointer group hover:-translate-y-1 active:scale-95"
                   >
-                    <div className="inline-flex p-2 rounded-lg bg-primary/10">
+                    <div className="inline-flex p-2 rounded-lg bg-primary/10 group-hover:bg-primary/20 group-hover:scale-110 group-hover:shadow-md transition-all duration-300">
                       <Icon className="h-5 w-5 text-primary" />
                     </div>
-                    <h3 className="font-semibold text-lg text-foreground">
+                    <h3 className="font-semibold text-lg text-foreground group-hover:text-primary transition-colors duration-300">
                       {item.title}
                     </h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed">
+                    <p className="text-muted-foreground text-sm leading-relaxed group-hover:text-foreground transition-colors duration-300">
                       {item.description}
                     </p>
                   </div>
