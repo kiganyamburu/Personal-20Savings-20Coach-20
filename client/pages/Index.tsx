@@ -48,14 +48,15 @@ export default function Index() {
                 to="/chat"
                 className={cn(
                   "inline-flex items-center justify-center gap-2 px-8 py-3 rounded-lg",
-                  "bg-primary text-primary-foreground hover:bg-primary/90",
-                  "text-base font-medium transition-colors",
+                  "bg-primary text-primary-foreground hover:bg-primary/90 active:scale-95",
+                  "text-base font-medium transition-all duration-200",
+                  "hover:shadow-lg hover:shadow-primary/30 hover:-translate-y-0.5"
                 )}
               >
                 Start Chatting
-                <ArrowRight className="h-5 w-5" />
+                <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
-              <Button size="lg" variant="outline" className="text-base">
+              <Button size="lg" variant="outline" className="text-base transition-all duration-200 hover:shadow-md hover:-translate-y-0.5 active:scale-95">
                 Learn More
               </Button>
             </div>
