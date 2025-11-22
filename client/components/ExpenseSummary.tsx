@@ -49,7 +49,7 @@ export function ExpenseSummary({ metrics }: ExpenseSummaryProps) {
         <div
           key={index}
           className={cn(
-            "rounded-lg border border-border p-6 backdrop-blur supports-[backdrop-filter]:bg-background/60",
+            "rounded-lg border border-border p-6 backdrop-blur supports-[backdrop-filter]:bg-background/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-primary/30 cursor-pointer group",
             `bg-gradient-to-br ${metric.color}`,
           )}
         >
