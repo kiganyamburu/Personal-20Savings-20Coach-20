@@ -247,10 +247,10 @@ export default function About() {
               ].map((faq, index) => (
                 <div
                   key={index}
-                  className="rounded-lg border border-border/50 bg-card/50 backdrop-blur p-6 space-y-3"
+                  className="rounded-lg border border-border/50 bg-card/50 backdrop-blur p-6 space-y-3 transition-all duration-300 hover:border-primary/40 hover:shadow-md hover:shadow-primary/10 cursor-pointer group hover:-translate-y-1"
                 >
-                  <h3 className="font-semibold text-foreground">{faq.q}</h3>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors duration-300">{faq.q}</h3>
+                  <p className="text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors duration-300">
                     {faq.a}
                   </p>
                 </div>
