@@ -55,10 +55,10 @@ export function ExpenseSummary({ metrics }: ExpenseSummaryProps) {
         >
           <div className="flex items-start justify-between">
             <div className="flex-1">
-              <p className="text-sm text-muted-foreground font-medium">
+              <p className="text-sm text-muted-foreground font-medium group-hover:text-foreground transition-colors duration-300">
                 {metric.label}
               </p>
-              <p className="text-2xl font-bold text-foreground mt-2">
+              <p className="text-2xl font-bold text-foreground mt-2 group-hover:text-primary transition-colors duration-300">
                 {metric.value}
               </p>
               {metric.change && (
