@@ -165,7 +165,10 @@ export default function About() {
                     "Based on your unique situation, we provide actionable recommendations tailored specifically to help you reach your goals.",
                 },
               ].map((item, index) => (
-                <div key={index} className="relative group cursor-pointer overflow-visible">
+                <div
+                  key={index}
+                  className="relative group cursor-pointer overflow-visible"
+                >
                   <div className="absolute -top-5 left-6 inline-flex items-center justify-center h-10 w-10 rounded-full bg-gradient-to-br from-primary to-secondary text-white font-bold text-sm transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-primary/30 z-10">
                     {item.step}
                   </div>
