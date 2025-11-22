@@ -164,15 +164,15 @@ export default function Index() {
               return (
                 <div
                   key={index}
-                  className="group rounded-xl border border-border/50 bg-gradient-to-br from-card to-muted/10 p-6 hover:border-primary/30 hover:shadow-lg transition-all duration-300"
+                  className="group rounded-xl border border-border/50 bg-gradient-to-br from-card to-muted/10 p-6 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 cursor-pointer hover:-translate-y-1.5 active:scale-95"
                 >
-                  <div className="mb-4 inline-flex p-3 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                    <Icon className="h-6 w-6 text-primary" />
+                  <div className="mb-4 inline-flex p-3 rounded-lg bg-primary/10 group-hover:bg-primary/20 group-hover:shadow-lg group-hover:shadow-primary/20 transition-all duration-300 group-hover:scale-110">
+                    <Icon className="h-6 w-6 text-primary transition-transform duration-300" />
                   </div>
-                  <h3 className="text-lg font-semibold text-foreground mb-2">
+                  <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
                     {feature.title}
                   </h3>
-                  <p className="text-muted-foreground">{feature.description}</p>
+                  <p className="text-muted-foreground group-hover:text-foreground transition-colors duration-300">{feature.description}</p>
                 </div>
               );
             })}
