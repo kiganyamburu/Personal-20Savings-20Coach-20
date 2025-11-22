@@ -56,13 +56,17 @@ export default function Index() {
                 Start Chatting
                 <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
-              <Button
-                size="lg"
-                variant="outline"
-                className="text-base transition-all duration-200 hover:shadow-md hover:-translate-y-0.5 active:scale-95"
+              <Link
+                to="/about"
+                className={cn(
+                  "inline-flex items-center justify-center gap-2 px-8 py-3 rounded-lg",
+                  "border border-primary text-primary hover:bg-primary/10",
+                  "text-base font-medium transition-all duration-200",
+                  "hover:shadow-md hover:-translate-y-0.5 active:scale-95"
+                )}
               >
                 Learn More
-              </Button>
+              </Link>
             </div>
 
             <div className="pt-4 space-y-3">
