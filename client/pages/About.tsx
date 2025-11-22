@@ -157,20 +157,20 @@ export default function About() {
                     "Based on your unique situation, we provide actionable recommendations tailored specifically to help you reach your goals.",
                 },
               ].map((item, index) => (
-                <div key={index} className="relative">
-                  <div className="absolute -top-4 left-4 inline-flex items-center justify-center h-10 w-10 rounded-full bg-gradient-to-br from-primary to-secondary text-white font-bold text-sm">
+                <div key={index} className="relative group cursor-pointer">
+                  <div className="absolute -top-4 left-4 inline-flex items-center justify-center h-10 w-10 rounded-full bg-gradient-to-br from-primary to-secondary text-white font-bold text-sm transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-primary/30">
                     {item.step}
                   </div>
-                  <div className="rounded-lg border border-border bg-card/50 backdrop-blur p-6 pt-12 space-y-3">
-                    <h3 className="font-semibold text-lg text-foreground">
+                  <div className="rounded-lg border border-border bg-card/50 backdrop-blur p-6 pt-12 space-y-3 transition-all duration-300 group-hover:border-primary/40 group-hover:shadow-lg group-hover:shadow-primary/10 group-hover:-translate-y-1">
+                    <h3 className="font-semibold text-lg text-foreground group-hover:text-primary transition-colors duration-300">
                       {item.title}
                     </h3>
-                    <p className="text-muted-foreground leading-relaxed">
+                    <p className="text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors duration-300">
                       {item.description}
                     </p>
                   </div>
                   {index < 2 && (
-                    <div className="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2 text-primary/30">
+                    <div className="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2 text-primary/30 transition-all duration-300 group-hover:text-primary/60 group-hover:translate-x-1">
                       <ArrowRight className="h-6 w-6" />
                     </div>
                   )}
