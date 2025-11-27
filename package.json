@@ -21,8 +21,15 @@
     "typecheck": "tsc"
   },
   "dependencies": {
+    "@genkit-ai/core": "^1.24.0",
+    "@genkit-ai/firebase": "^1.24.0",
+    "@genkit-ai/vertexai": "^1.24.0",
+    "@google-cloud/aiplatform": "^5.13.0",
+    "@google/generative-ai": "^0.24.1",
     "dotenv": "^17.2.1",
     "express": "^5.1.0",
+    "firebase": "^12.6.0",
+    "firebase-admin": "^13.6.0",
     "zod": "^3.25.76"
   },
   "devDependencies": {

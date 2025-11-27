@@ -25,3 +25,15 @@ dist-ssr
 
 .config/
 !.env
+
+# Environment files (IMPORTANT: Never commit these!)
+.env
+.env.local
+.env.*.local
+.env.client
+
+# Firebase and Google Cloud credentials
+firebase-service-account.json
+*-service-account.json
+google-credentials.json
+gcp-key.json

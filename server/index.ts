@@ -2,6 +2,18 @@ import "dotenv/config";
 import express from "express";
 import cors from "cors";
 import { handleDemo } from "./routes/demo";
+import { handleChat, getConversation } from "./routes/chat";
+import {
+  logExpense,
+  getExpenses,
+  getExpenseSummary,
+  deleteExpense,
+} from "./routes/expenses";
+import { getFinancialInsights, getSpendingTrends } from "./routes/insights";
+import { initializeFirebase } from "./config/firebase";
+
+// Initialize Firebase on server startup
+initializeFirebase();
 
 export function createServer() {
   const app = express();
@@ -18,6 +30,20 @@ export function createServer() {
   });
 
   app.get("/api/demo", handleDemo);
+
+  // Chat routes
+  app.post("/api/chat", handleChat);
+  app.get("/api/chat/:conversationId", getConversation);
+
+  // Expense routes
+  app.post("/api/expenses", logExpense);
+  app.get("/api/expenses", getExpenses);
+  app.get("/api/expenses/summary/:userId", getExpenseSummary);
+  app.delete("/api/expenses/:expenseId", deleteExpense);
+
+  // Insights routes
+  app.get("/api/insights/:userId", getFinancialInsights);
+  app.get("/api/insights/:userId/trends", getSpendingTrends);
 
   return app;
 }
