@@ -1,8 +1,8 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { initializeFirebase } from "./firebase";
 
-// Initialize Firebase for data storage
-initializeFirebase();
+// Firebase will be initialized when server starts, not during config loading
+// initializeFirebase(); // Removed - will be called in server/index.ts
 
 // Initialize Gemini AI
 const genAI = new GoogleGenerativeAI(

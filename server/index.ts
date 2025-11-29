@@ -12,10 +12,20 @@ import {
 import { getFinancialInsights, getSpendingTrends } from "./routes/insights";
 import { initializeFirebase } from "./config/firebase";
 
-// Initialize Firebase on server startup
-initializeFirebase();
+// Initialize Firebase when server actually starts (not during Vite config phase)
+let firebaseInitialized = false;
+
+function ensureFirebaseInitialized() {
+  if (!firebaseInitialized) {
+    initializeFirebase();
+    firebaseInitialized = true;
+  }
+}
 
 export function createServer() {
+  // Initialize Firebase when creating the server
+  ensureFirebaseInitialized();
+  
   const app = express();
 
   // Middleware
