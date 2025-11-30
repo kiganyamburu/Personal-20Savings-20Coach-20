@@ -19,7 +19,7 @@ Send a message to the AI coach and get a response.
 
 ```json
 {
-  "message": "I spent $50 on groceries today",
+  "message": "I spent KSH 500 on groceries today",
   "userId": "user123",
   "conversationId": "conv-456" // Optional, for continuing a conversation
 }
@@ -29,7 +29,7 @@ Send a message to the AI coach and get a response.
 
 ```json
 {
-  "response": "Great! I've noted that you spent $50 on groceries...",
+  "response": "Great! I've noted that you spent KSH 500 on groceries...",
   "intent": "expense_log",
   "conversationId": "conv-456",
   "action": "log_expense", // Optional
@@ -237,7 +237,7 @@ GET /api/insights/user123?timeframe=last 30 days
   ],
   "recommendations": [
     "Consider meal planning to reduce dining expenses",
-    "Try setting a weekly dining budget of $50",
+    "Try setting a weekly dining budget of KSH 500",
     "Look for grocery store promotions on weekends"
   ],
   "topCategories": [

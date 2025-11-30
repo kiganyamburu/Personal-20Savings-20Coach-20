@@ -5,6 +5,7 @@ Your development server is now running at **http://localhost:8080**
 ## ⚠️ Current Status
 
 The server started with a warning:
+
 ```
 ⚠️ Invalid Firebase service account. Server will run without Firebase Admin.
 ```
@@ -36,6 +37,7 @@ This enables AI chat features immediately!
 2. Create a new project (or use existing)
 3. Click "Add app" → Web app (</>)
 4. Copy the config and update `.env`:
+
    ```env
    VITE_FIREBASE_API_KEY=AIza...
    VITE_FIREBASE_AUTH_DOMAIN=your-project.firebaseapp.com
@@ -43,9 +45,10 @@ This enables AI chat features immediately!
    VITE_FIREBASE_STORAGE_BUCKET=your-project.appspot.com
    VITE_FIREBASE_MESSAGING_SENDER_ID=123456789
    VITE_FIREBASE_APP_ID=1:123:web:abc
-   
+
    FIREBASE_PROJECT_ID=your-project-id
    ```
+
 5. Enable Firestore:
    - In Firebase Console → Firestore Database
    - Click "Create database" → "Start in test mode"
@@ -68,14 +71,14 @@ Even without Firebase configured:
 ✅ **Frontend** - React app loads at http://localhost:8080  
 ✅ **Basic Routes** - All pages accessible  
 ✅ **UI Components** - All components render  
-✅ **API Server** - Express server running  
+✅ **API Server** - Express server running
 
 ### What Needs Configuration:
 
 ❌ **AI Chat** - Needs `GOOGLE_GEMINI_API_KEY`  
 ❌ **Expense Storage** - Needs Firebase Firestore  
 ❌ **User Authentication** - Needs Firebase Auth  
-❌ **AI Insights** - Needs both Gemini + Firestore  
+❌ **AI Insights** - Needs both Gemini + Firestore
 
 ## 📚 Detailed Setup Guides
 

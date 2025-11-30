@@ -1,4 +1,4 @@
-import { TrendingDown, TrendingUp, DollarSign, Target } from "lucide-react";
+import { TrendingDown, TrendingUp, Coins, Target } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface ExpenseMetric {
@@ -18,22 +18,22 @@ export function ExpenseSummary({ metrics }: ExpenseSummaryProps) {
   const defaultMetrics: ExpenseMetric[] = [
     {
       label: "This Month",
-      value: "$2,450",
+      value: "KSH 24,500",
       change: "+12% from last month",
       trend: "up",
-      icon: <DollarSign className="h-5 w-5" />,
+      icon: <Coins className="h-5 w-5" />,
       color: "from-primary/20 to-primary/10",
     },
     {
       label: "Budget Used",
       value: "73%",
-      change: "$3,000 total budget",
+      change: "KSH 30,000 total budget",
       icon: <Target className="h-5 w-5" />,
       color: "from-secondary/20 to-secondary/10",
     },
     {
       label: "Savings Potential",
-      value: "$890",
+      value: "KSH 8,900",
       change: "Based on spending patterns",
       trend: "down",
       icon: <TrendingDown className="h-5 w-5" />,

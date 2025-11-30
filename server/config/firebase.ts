@@ -21,21 +21,35 @@ export function initializeFirebase() {
     if (process.env.FIREBASE_SERVICE_ACCOUNT) {
       try {
         const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
-        
+
         // Validate service account has required fields
         if (!serviceAccount.private_key || !serviceAccount.client_email) {
-          console.warn("⚠️  Invalid Firebase service account. Server will run without Firebase Admin.");
-          return { app: undefined as any, db: undefined as any, auth: undefined as any };
+          console.warn(
+            "⚠️  Invalid Firebase service account. Server will run without Firebase Admin.",
+          );
+          return {
+            app: undefined as any,
+            db: undefined as any,
+            auth: undefined as any,
+          };
         }
-        
+
         app = initializeApp({
           credential: cert(serviceAccount),
           projectId: process.env.FIREBASE_PROJECT_ID,
         });
       } catch (parseError) {
-        console.warn("⚠️  Could not parse FIREBASE_SERVICE_ACCOUNT. Server will run without Firebase Admin.");
-        console.warn("   Set up your Firebase credentials to enable database features.");
-        return { app: undefined as any, db: undefined as any, auth: undefined as any };
+        console.warn(
+          "⚠️  Could not parse FIREBASE_SERVICE_ACCOUNT. Server will run without Firebase Admin.",
+        );
+        console.warn(
+          "   Set up your Firebase credentials to enable database features.",
+        );
+        return {
+          app: undefined as any,
+          db: undefined as any,
+          auth: undefined as any,
+        };
       }
     } else if (process.env.FIREBASE_PROJECT_ID) {
       // Initialize with default credentials (for local development with emulator)
@@ -44,9 +58,17 @@ export function initializeFirebase() {
         projectId: process.env.FIREBASE_PROJECT_ID,
       });
     } else {
-      console.warn("⚠️  No Firebase configuration found. Server will run without Firebase Admin.");
-      console.warn("   Add FIREBASE_PROJECT_ID and FIREBASE_SERVICE_ACCOUNT to your .env file.");
-      return { app: undefined as any, db: undefined as any, auth: undefined as any };
+      console.warn(
+        "⚠️  No Firebase configuration found. Server will run without Firebase Admin.",
+      );
+      console.warn(
+        "   Add FIREBASE_PROJECT_ID and FIREBASE_SERVICE_ACCOUNT to your .env file.",
+      );
+      return {
+        app: undefined as any,
+        db: undefined as any,
+        auth: undefined as any,
+      };
     }
 
     db = getFirestore(app);
@@ -55,9 +77,18 @@ export function initializeFirebase() {
     console.log("✅ Firebase Admin initialized successfully");
     return { app, db, auth };
   } catch (error) {
-    console.warn("⚠️  Firebase initialization failed:", error instanceof Error ? error.message : error);
-    console.warn("   Server will run without Firebase. Check your configuration.");
-    return { app: undefined as any, db: undefined as any, auth: undefined as any };
+    console.warn(
+      "⚠️  Firebase initialization failed:",
+      error instanceof Error ? error.message : error,
+    );
+    console.warn(
+      "   Server will run without Firebase. Check your configuration.",
+    );
+    return {
+      app: undefined as any,
+      db: undefined as any,
+      auth: undefined as any,
+    };
   }
 }
 

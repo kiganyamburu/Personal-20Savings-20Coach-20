@@ -31,7 +31,7 @@ export async function detectIntent(message: string) {
     const prompt = `
 Analyze the following user message and determine the intent. Classify it into one of these categories:
 - greeting: User is greeting or starting a conversation
-- expense_log: User wants to record/log an expense (e.g., "I spent $50 on groceries")
+- expense_log: User wants to record/log an expense (e.g., "I spent KSH 500 on groceries")
 - expense_query: User is asking about their expenses (e.g., "How much did I spend last week?")
 - savings_advice: User is asking for financial advice or savings tips
 - budget_help: User is asking for help with budgeting
@@ -149,7 +149,7 @@ export async function generateInsights(params: {
 As a financial advisor, analyze the following expense data and provide insights:
 
 Timeframe: ${timeframe}
-Total Spent: $${totalSpent.toFixed(2)}
+Total Spent: KSH ${totalSpent.toFixed(2)}
 Number of Expenses: ${expenses.length}
 
 Expenses by Category:

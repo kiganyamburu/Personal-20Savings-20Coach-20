@@ -103,7 +103,7 @@ function ExpenseTracker() {
     });
 
     if (summary) {
-      console.log(`Total spent: $${summary.totalSpent}`);
+      console.log(`Total spent: KSH ${summary.totalSpent}`);
       console.log("By category:", summary.categoryBreakdown);
     }
   };
@@ -161,7 +161,7 @@ function InsightsPanel() {
           <h2>Top Categories</h2>
           {insights.topCategories.map((cat) => (
             <div key={cat.category}>
-              {cat.category}: ${cat.amount.toFixed(2)} ({cat.percentage}%)
+              {cat.category}: KSH {cat.amount.toFixed(2)} ({cat.percentage}%)
             </div>
           ))}
         </>
@@ -227,7 +227,7 @@ export const myHandler: RequestHandler = async (req, res) => {
 import { detectIntent, generateResponse, generateInsights } from "../config/genkit";
 
 // Detect what the user wants
-const intentResult = await detectIntent("I spent $50 on groceries");
+const intentResult = await detectIntent("I spent KSH 500 on groceries");
 // Returns: { intent: "expense_log", confidence: 0.95, entities: {...} }
 
 // Generate a response

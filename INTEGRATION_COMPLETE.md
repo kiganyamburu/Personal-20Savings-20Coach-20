@@ -206,7 +206,7 @@ Your project already has these UI components in `client/components/ui/`:
 ## 💡 Example Use Cases
 
 1. **Expense Logging via Chat**
-   - User: "I spent $50 on groceries"
+   - User: "I spent KSH 500 on groceries"
    - AI detects intent, extracts data, logs expense
    - Returns confirmation and encouragement
 

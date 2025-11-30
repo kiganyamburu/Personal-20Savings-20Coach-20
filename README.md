@@ -11,7 +11,7 @@ An AI-powered financial coaching application that helps users track expenses, re
 
 ### 🤖 AI-Powered Chat
 
-- Natural language expense logging: "I spent $50 on groceries"
+- Natural language expense logging: "I spent KSH 500 on groceries"
 - Intelligent intent detection and routing
 - Contextual conversations with memory
 - Personalized financial advice

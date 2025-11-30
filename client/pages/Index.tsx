@@ -113,7 +113,7 @@ export default function Index() {
                       +12%
                     </span>
                   </div>
-                  <p className="text-xl font-bold text-foreground">$2,450</p>
+                  <p className="text-xl font-bold text-foreground">KSH 24,500</p>
                 </div>
 
                 <div className="bg-gradient-to-br from-secondary/10 to-secondary/5 rounded-lg p-4 border border-secondary/20">
@@ -134,7 +134,7 @@ export default function Index() {
                   <p className="text-xs text-muted-foreground font-medium mb-2">
                     Savings Potential
                   </p>
-                  <p className="text-xl font-bold text-green-700">$890</p>
+                  <p className="text-xl font-bold text-green-700">KSH 8,900</p>
                 </div>
               </div>
 
@@ -256,7 +256,7 @@ export default function Index() {
               step: "1",
               title: "Chat About Your Spending",
               description:
-                "Simply tell the coach about your expenses. Say things like 'spent $50 on groceries' or 'my rent is $1,500'.",
+                "Simply tell the coach about your expenses. Say things like 'spent KSH 500 on groceries' or 'my rent is KSH 15,000'.",
             },
             {
               step: "2",

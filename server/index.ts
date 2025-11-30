@@ -25,7 +25,7 @@ function ensureFirebaseInitialized() {
 export function createServer() {
   // Initialize Firebase when creating the server
   ensureFirebaseInitialized();
-  
+
   const app = express();
 
   // Middleware
