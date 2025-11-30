@@ -302,7 +302,7 @@ export default function About() {
               Personal Savings Coach — Empowering your financial future
             </p>
             <p className="text-sm text-muted-foreground/60">
-              © 2024 Personal Savings Coach. All rights reserved.
+              © 2025 Personal Savings Coach. All rights reserved.
             </p>
           </section>
         </div>

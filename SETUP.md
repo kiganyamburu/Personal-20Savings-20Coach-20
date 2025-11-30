@@ -183,7 +183,7 @@ const response = await fetch("/api/chat", {
   method: "POST",
   headers: { "Content-Type": "application/json" },
   body: JSON.stringify({
-    message: 'I spent KSH 500 on groceries today',
+    message: "I spent KSH 500 on groceries today",
     userId: "user123",
   }),
 });

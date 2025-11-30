@@ -16,7 +16,6 @@ An AI-powered financial coaching application that helps users track expenses, re
 - Contextual conversations with memory
 - Personalized financial advice
 
-
 ### 💸 Expense Tracking
 
 - Log expenses via chat or API
@@ -46,7 +45,7 @@ An AI-powered financial coaching application that helps users track expenses, re
 - pnpm (recommended) or npm
 - Google Gemini API key ([Get one here](https://makersuite.google.com/app/apikey))
 - Firebase project ([Create one here](https://console.firebase.google.com/))
-- 
+-
 
 ### Installation
 

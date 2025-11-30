@@ -113,7 +113,9 @@ export default function Index() {
                       +12%
                     </span>
                   </div>
-                  <p className="text-xl font-bold text-foreground">KSH 24,500</p>
+                  <p className="text-xl font-bold text-foreground">
+                    KSH 24,500
+                  </p>
                 </div>
 
                 <div className="bg-gradient-to-br from-secondary/10 to-secondary/5 rounded-lg p-4 border border-secondary/20">
