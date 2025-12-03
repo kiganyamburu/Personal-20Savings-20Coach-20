@@ -44,7 +44,7 @@ export default function Index() {
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Link
-                to="/chat"
+                to="/login"
                 className={cn(
                   "inline-flex items-center justify-center gap-2 px-8 py-3 rounded-lg",
                   "bg-primary text-primary-foreground hover:bg-primary/90 active:scale-95",
@@ -52,7 +52,7 @@ export default function Index() {
                   "hover:shadow-lg hover:shadow-primary/30 hover:-translate-y-0.5",
                 )}
               >
-                Start Chatting
+                Get started
                 <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
               <Link
@@ -309,7 +309,7 @@ export default function Index() {
                 your journey to better financial health.
               </p>
               <Link
-                to="/chat"
+                to="/login"
                 className={cn(
                   "inline-flex items-center justify-center gap-2 px-8 py-3 rounded-lg",
                   "bg-primary text-primary-foreground hover:bg-primary/90 active:scale-95",

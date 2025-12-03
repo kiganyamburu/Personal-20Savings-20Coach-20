@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { buildApiUrl } from "@/lib/api";
+import { useAuth } from "@/hooks/useAuth";
 import type { Expense, ExpenseSummary } from "@shared/types";
 
 /**
@@ -7,17 +9,23 @@ import type { Expense, ExpenseSummary } from "@shared/types";
 export function useExpenses() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const { token } = useAuth();
 
   const logExpense = async (expense: Omit<Expense, "id" | "createdAt">) => {
     setLoading(true);
     setError(null);
 
     try {
-      const response = await fetch("/api/expenses", {
+      const headers: HeadersInit = {
+        "Content-Type": "application/json",
+      };
+      if (token) {
+        headers.Authorization = `Bearer ${token}`;
+      }
+
+      const response = await fetch(buildApiUrl("/expenses"), {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers,
         body: JSON.stringify(expense),
       });
 
@@ -54,7 +62,15 @@ export function useExpenses() {
       if (filters?.endDate) params.append("endDate", filters.endDate);
       if (filters?.category) params.append("category", filters.category);
 
-      const response = await fetch(`/api/expenses?${params.toString()}`);
+      const headers: HeadersInit = {};
+      if (token) {
+        headers.Authorization = `Bearer ${token}`;
+      }
+
+      const response = await fetch(
+        `${buildApiUrl("/expenses")}?${params.toString()}`,
+        { headers },
+      );
 
       if (!response.ok) {
         throw new Error(`Failed to get expenses: ${response.statusText}`);
@@ -87,10 +103,14 @@ export function useExpenses() {
       if (filters?.startDate) params.append("startDate", filters.startDate);
       if (filters?.endDate) params.append("endDate", filters.endDate);
 
-      const url = `/api/expenses/summary/${userId}${
+      const url = `${buildApiUrl(`/expenses/summary/${userId}`)}${
         params.toString() ? `?${params.toString()}` : ""
       }`;
-      const response = await fetch(url);
+      const headers: HeadersInit = {};
+      if (token) {
+        headers.Authorization = `Bearer ${token}`;
+      }
+      const response = await fetch(url, { headers });
 
       if (!response.ok) {
         throw new Error(`Failed to get summary: ${response.statusText}`);
@@ -113,8 +133,13 @@ export function useExpenses() {
     setError(null);
 
     try {
-      const response = await fetch(`/api/expenses/${expenseId}`, {
+      const headers: HeadersInit = {};
+      if (token) {
+        headers.Authorization = `Bearer ${token}`;
+      }
+      const response = await fetch(buildApiUrl(`/expenses/${expenseId}`), {
         method: "DELETE",
+        headers,
       });
 
       if (!response.ok) {

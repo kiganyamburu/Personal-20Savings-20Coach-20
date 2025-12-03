@@ -284,14 +284,14 @@ export default function About() {
               your journey to better financial health.
             </p>
             <Link
-              to="/chat"
+              to="/login"
               className={cn(
                 "inline-flex items-center justify-center gap-2 px-8 py-3 rounded-lg",
                 "bg-primary text-primary-foreground hover:bg-primary/90",
                 "text-base font-medium transition-colors",
               )}
             >
-              Start Chatting
+              Get started
               <ArrowRight className="h-5 w-5" />
             </Link>
           </section>

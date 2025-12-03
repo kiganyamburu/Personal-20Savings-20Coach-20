@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { buildApiUrl } from "@/lib/api";
+import { useAuth } from "@/hooks/useAuth";
 import type { ChatRequest, ChatResponse } from "@shared/types";
 
 /**
@@ -7,6 +9,7 @@ import type { ChatRequest, ChatResponse } from "@shared/types";
 export function useChat() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const { token } = useAuth();
 
   const sendMessage = async (
     message: string,
@@ -23,11 +26,16 @@ export function useChat() {
         conversationId,
       };
 
-      const response = await fetch("/api/chat", {
+      const headers: HeadersInit = {
+        "Content-Type": "application/json",
+      };
+      if (token) {
+        headers.Authorization = `Bearer ${token}`;
+      }
+
+      const response = await fetch(buildApiUrl("/chat"), {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers,
         body: JSON.stringify(request),
       });
 
@@ -52,7 +60,13 @@ export function useChat() {
     setError(null);
 
     try {
-      const response = await fetch(`/api/chat/${conversationId}`);
+      const headers: HeadersInit = {};
+      if (token) {
+        headers.Authorization = `Bearer ${token}`;
+      }
+      const response = await fetch(buildApiUrl(`/chat/${conversationId}`), {
+        headers,
+      });
 
       if (!response.ok) {
         throw new Error(`Failed to get conversation: ${response.statusText}`);

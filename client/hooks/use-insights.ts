@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { buildApiUrl } from "@/lib/api";
+import { useAuth } from "@/hooks/useAuth";
 import type { FinancialInsights, SpendingTrendsResponse } from "@shared/types";
 
 /**
@@ -7,6 +9,7 @@ import type { FinancialInsights, SpendingTrendsResponse } from "@shared/types";
 export function useInsights() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const { token } = useAuth();
 
   const getInsights = async (
     userId: string,
@@ -25,10 +28,14 @@ export function useInsights() {
       if (filters?.endDate) params.append("endDate", filters.endDate);
       if (filters?.timeframe) params.append("timeframe", filters.timeframe);
 
-      const url = `/api/insights/${userId}${
+      const url = `${buildApiUrl(`/insights/${userId}`)}${
         params.toString() ? `?${params.toString()}` : ""
       }`;
-      const response = await fetch(url);
+      const headers: HeadersInit = {};
+      if (token) {
+        headers.Authorization = `Bearer ${token}`;
+      }
+      const response = await fetch(url, { headers });
 
       if (!response.ok) {
         throw new Error(`Failed to get insights: ${response.statusText}`);
@@ -54,8 +61,13 @@ export function useInsights() {
     setError(null);
 
     try {
+      const headers: HeadersInit = {};
+      if (token) {
+        headers.Authorization = `Bearer ${token}`;
+      }
       const response = await fetch(
-        `/api/insights/${userId}/trends?period=${period}`,
+        `${buildApiUrl(`/insights/${userId}/trends`)}?period=${period}`,
+        { headers },
       );
 
       if (!response.ok) {
